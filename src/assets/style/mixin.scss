@@ -1,6 +1,8 @@
 // 全局样式 混入
 $bgColor: #00bcd4;
 $darkColor: #333;
+$lightDark: #f1f1f1;
+$yellowColor: #ff9300;
 
 
 // 文字不换号省略号
@@ -8,4 +10,10 @@ $darkColor: #333;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+// 去除inputbutton样式
+@mixin clearBtn {
+    background: none;
+    outline: none;
+    border: none;
 }
