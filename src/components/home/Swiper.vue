@@ -13,13 +13,13 @@
 // 引入 mint-ui swipe
 
 export default {
-  name: "home-swiper",
+  name: "HomeSwiper",
   data() {
     return {
       swiperList: [
-        {id: 1, imgUrl: require("../assets/images/swiper.jpeg")},
-        {id: 2, imgUrl: require("../assets/images/swiper1.jpeg")},
-        {id: 3, imgUrl: require("../assets/images/swiper2.jpeg")}
+        {id: 1, imgUrl: require("../../assets/images/swiper.jpeg")},
+        {id: 2, imgUrl: require("../../assets/images/swiper1.jpeg")},
+        {id: 3, imgUrl: require("../../assets/images/swiper2.jpeg")}
       ]
     };
   },

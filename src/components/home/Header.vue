@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "my-Header",
+  name: "HomeHeader",
   props: {
     title: String,
     isLeft: Boolean,
