@@ -3,13 +3,13 @@
     <!-- 头部组件 -->
     <Header :isLeft="true" title="输入城市/景点/游玩主题" :city="city" />
     <!-- 轮播图 -->
-    <Swiper :swiperList="HomeList.swiperList" />
+    <Swiper :swiperList="swiperList" />
     <!-- icons 区域 -->
-    <HomeIcons :iconList="HomeList.iconList" />
+    <HomeIcons :iconList="iconList" />
     <!-- 推荐区域 -->
-    <HomeRecommend :recommendList="HomeList.recommendList" />
+    <HomeRecommend :recommendList="recommendList" />
     <!-- 周末去哪 -->
-    <HomeWeekend :weekendList="HomeList.weekendList" />
+    <HomeWeekend :weekendList="weekendList" />
   </div>
 </template>
 
@@ -25,8 +25,11 @@ export default {
   name: 'Home',
   data(){
     return{
-      HomeList: {}, //home页面所有数据 传给子组件
       city: "北京",
+      iconList: [],
+      swiperList: [],
+      recommendList: [],
+      weekendList: []
     }
   },
   components: {
@@ -43,8 +46,11 @@ export default {
   methods:{
     getHomeInfo(){
       this.$axios.get('/mock/index.json').then(res => {
-        this.HomeList = res.data.data;
-        console.log(this.HomeList)
+        const data = res.data.data;
+        this.iconList = data.iconList;
+        this.swiperList = data.swiperList;
+        this.recommendList = data.recommendList;
+        this.weekendList = weekendList;
       }).catch(err => err)
     }
   }

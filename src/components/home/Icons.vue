@@ -1,5 +1,5 @@
 <template>
-  <div class="icons" v-if="iconList.length">
+  <div class="icons"  v-if="iconList">
     <mt-swipe :auto="0" class="mint_swipe">
       <mt-swipe-item
         v-for="(page, i) of pages"
@@ -34,7 +34,7 @@ export default {
         pages[page].push(item);
       });
       return pages;
-    },
+    }
   },
 };
 </script>

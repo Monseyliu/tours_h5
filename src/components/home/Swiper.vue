@@ -1,6 +1,6 @@
 <template>
   <!-- 轮播组件 -->
-  <div class="swiper" v-if="swiperList.length">
+  <div class="swiper" >
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="item of swiperList" :key="item.id">
         <img class="swipe_img" :src="item.imgUrl" />
