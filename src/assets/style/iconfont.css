@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('../iconfonts/iconfont.eot?t=1612171691992'); /* IE9 */
+  src: url('../iconfonts/iconfont.eot?t=1612171691992#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANoAAsAAAAAB1gAAAMbAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqCBIF7ATYCJAMQCwoABCAFhG0HVxt8BhEVnAPIvoYybo+gAEnVDE642IHX61rLAwHrX6CCb0ABAAAAAPEAf+z9c+O93UUHpVbYaDQa1QepoCiQT9IiH7MENs/+7KONbFtdXKOj3faWrMpzouuFAjpevkZYbta2uVTnwkYnQALkJ8zxBLabe0h+x/brT68uVITKaW15xAUh1TWwCQ13l+Nuqx5sOrnvDxgyDQosDCiEBwB4Aw11P/7nmroUz29nc7nIhUUV3Z5HAg5sOrDoINtAJugbdDcxEN9qMwF1hnCA20q9ASiyoFdAuBINe4HS8ssySxVBdWRiFp6josQH3MGz/Pvhv8VQiCpJMPCQFAFg/X/9gAvO41QA8jwr2DQSFgAy4XTUfmJSGV8AqzPNs1WAooicVbff4t/IyIvx8C+PIEqEqoDfAJZRIvErGyMEflURIr8aPAk+iL6UyW3DBZYOHB8FoRvVjrlq2j737vfM16o34MG6bWp/2NdlMYhBFA6Ksz8xt0UKdArkYJc8OdN0nOIP9YrzSOyjKphlWzxcfLMTnDSwvR37+weP6vj99kXNvjIiB6414CUGzEEU8XynBC81VGZplkrZoosDl1TuReD2r50rIYo/rz/ykzzp8sD+AnTt65jFsktDuFVigpVp7DAQM3B5eil23t3xJwVI9yn+A79xwIiwG8v/oz6DD4Kveei7vLCPdEZyNene5MqybOnAkLNmYsJzZuO7e0TUqYMrp2lzd4a+czWfoOisIaoxCEkxIczSBaiotwxVxRrUmaeaXq9d3CQh12JOFUDQYhmiJu8gabErzNJbqOjyC1UtIUGdow1xwXpTAZJ2E7SKAdwPJM8zRSbdFZnPGD+KlSady95R1hSCoe27qTPOKGcMWT/jqEpAwhVOYDsshWERvqDXdlJdjl1HY29qPVezMxO0igHcDyTPM6W1ddf7/DPGj2JlJqtRf0dZU+MwtP0K4Vk7r8r6lmvWzziqEpBwhRNoh6UwLOPtLui1nXZEl2MXVqO12vZ+fXVAnOURLJA3JpTTr2jFTzfJBOGvpiBp47iE+zYb4lZzQ6mUNEdjAAA=') format('woff2'),
+  url('../iconfonts/iconfont.woff?t=1612171691992') format('woff'),
+  url('../iconfonts/iconfont.ttf?t=1612171691992') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('../iconfonts/iconfont.svg?t=1612171691992#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconsearch:before {
+  content: "\e67d";
+}
+
+.iconarrow-left-bold:before {
+  content: "\e685";
+}
+
+.iconarrow-down-filling:before {
+  content: "\e688";
+}
+
