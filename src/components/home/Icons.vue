@@ -1,7 +1,11 @@
 <template>
-  <div class="icons">
+  <div class="icons" v-if="iconList.length">
     <mt-swipe :auto="0" class="mint_swipe">
-      <mt-swipe-item v-for="(page,i) of pages" :key="i" class="mint_swipe_item">
+      <mt-swipe-item
+        v-for="(page, i) of pages"
+        :key="i"
+        class="mint_swipe_item"
+      >
         <div class="icon_item" v-for="item of page" :key="item.id">
           <div class="icon_img_wrap">
             <img class="icon_img_content" :src="item.imgUrl" alt="" />
@@ -16,70 +20,13 @@
 <script>
 export default {
   name: "HomeIcons",
-  data() {
-    return {
-      inconList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
-          desc: "景点门票",
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "滑雪季",
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1710/a6/83f636bd75ae6302.png",
-          desc: "泡温泉",
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/35/2640cab202c41b02.png",
-          desc: "动植园",
-        },
-        {
-          id: "0005",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/d0/e09575e66f4aa402.png",
-          desc: "游乐园",
-        },
-        {
-          id: "0006",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/59/569d3c096e542502.png",
-          desc: "必游榜单",
-        },
-        {
-          id: "0007",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/17/4bd370f3eb1acd02.png",
-          desc: "演出",
-        },
-        {
-          id: "0008",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/7f/b1ea3c8c7fb6db02.png",
-          desc: "城市观光",
-        },
-        {
-          id: "0009",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png",
-          desc: "一日游",
-        },
-      ],
-    };
+  props: {
+    iconList: Array,
   },
   computed: {
     pages() {
       const pages = [];
-      this.inconList.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8);
         if (!pages[page]) {
           pages[page] = [];
@@ -135,10 +82,10 @@ export default {
     }
   }
 }
-.mint_swipe{
-    min-height: 4rem;
-    .mint_swipe_item{
-        height: 100%;
-    }
+.mint_swipe {
+  min-height: 4rem;
+  .mint_swipe_item {
+    height: 100%;
+  }
 }
 </style>

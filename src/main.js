@@ -8,12 +8,16 @@ import '../src/assets/style/reset.css'
 import '../src/assets/style/border.css'
 import '../src/assets/style/iconfont.css'
 // 引入 mint -ui
-import MintUI from 'mint-ui';
+import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-Vue.use(MintUI);
+// 引入 axios 代理
+import axios from 'axios'
+import '../src/config/index.js'
 
 Vue.config.productionTip = false
 FastClick.attach(document.body);
+Vue.use(MintUI);
+Vue.prototype.$axios = axios;
 
 new Vue({
   router,

@@ -1,6 +1,6 @@
 <template>
   <!-- 轮播组件 -->
-  <div class="swiper">
+  <div class="swiper" v-if="swiperList.length">
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="item of swiperList" :key="item.id">
         <img class="swipe_img" :src="item.imgUrl" />
@@ -14,14 +14,8 @@
 
 export default {
   name: "HomeSwiper",
-  data() {
-    return {
-      swiperList: [
-        {id: 1, imgUrl: require("../../assets/images/swiper.jpeg")},
-        {id: 2, imgUrl: require("../../assets/images/swiper1.jpeg")},
-        {id: 3, imgUrl: require("../../assets/images/swiper2.jpeg")}
-      ]
-    };
+  props: {
+    swiperList: Array,
   },
 };
 </script>

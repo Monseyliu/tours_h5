@@ -1,15 +1,15 @@
 <template>
   <div class="home">
     <!-- 头部组件 -->
-    <Header :isLeft="true" title="输入城市/景点/游玩主题" rightTitle="城市" />
+    <Header :isLeft="true" title="输入城市/景点/游玩主题" :city="city" />
     <!-- 轮播图 -->
-    <Swiper />
+    <Swiper :swiperList="HomeList.swiperList" />
     <!-- icons 区域 -->
-    <HomeIcons />
+    <HomeIcons :iconList="HomeList.iconList" />
     <!-- 推荐区域 -->
-    <HomeRecommend />
+    <HomeRecommend :recommendList="HomeList.recommendList" />
     <!-- 周末去哪 -->
-    <HomeWeekend />
+    <HomeWeekend :weekendList="HomeList.weekendList" />
   </div>
 </template>
 
@@ -23,12 +23,30 @@ import HomeWeekend from "../../components/home/Weekend";
 
 export default {
   name: 'Home',
+  data(){
+    return{
+      HomeList: {}, //home页面所有数据 传给子组件
+      city: "北京",
+    }
+  },
   components: {
     Header,
     Swiper,
     HomeIcons,
     HomeRecommend,
     HomeWeekend
+  },
+  mounted(){
+    // 首页发一次请求
+    this.getHomeInfo();
+  },
+  methods:{
+    getHomeInfo(){
+      this.$axios.get('/mock/index.json').then(res => {
+        this.HomeList = res.data.data;
+        console.log(this.HomeList)
+      }).catch(err => err)
+    }
   }
 }
 </script>

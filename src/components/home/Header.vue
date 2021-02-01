@@ -8,17 +8,16 @@
       <span class="iconfont">&#xe67d;</span>
       {{ title }}
     </div>
-    <div class="header_right">{{rightTitle}}<span class="iconfont down_icon">&#xe688;</span></div>
+    <div class="header_right">{{city}}<span class="iconfont down_icon">&#xe688;</span></div>
   </div>
 </template>
-
 <script>
 export default {
   name: "HomeHeader",
   props: {
     title: String,
     isLeft: Boolean,
-    rightTitle: String
+    city: String
   },
 };
 </script>
