@@ -50,7 +50,7 @@ export default {
         this.iconList = data.iconList;
         this.swiperList = data.swiperList;
         this.recommendList = data.recommendList;
-        this.weekendList = weekendList;
+        this.weekendList = data.weekendList;
       }).catch(err => err)
     }
   }

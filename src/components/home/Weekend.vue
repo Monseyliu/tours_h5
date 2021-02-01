@@ -1,5 +1,5 @@
 <template>
-  <div class="weekend" >
+  <div class="weekend" v-if="weekendList">
     <div class="weekend_title">周末去哪</div>
     <ul>
       <li class="item border-bottom" v-for="item of weekendList" :key="item.id">
