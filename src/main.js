@@ -7,6 +7,10 @@ import FastClick from 'fastclick'
 import '../src/assets/style/reset.css'
 import '../src/assets/style/border.css'
 import '../src/assets/style/iconfont.css'
+// 引入 mint -ui
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css'
+Vue.use(MintUI);
 
 Vue.config.productionTip = false
 FastClick.attach(document.body);
