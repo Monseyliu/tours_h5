@@ -20,6 +20,7 @@ import Swiper from "../../components/home/Swiper";
 import HomeIcons from "../../components/home/Icons"
 import HomeRecommend from "../../components/home/Recommend";
 import HomeWeekend from "../../components/home/Weekend";
+import {mapState} from "vuex";
 
 export default {
   name: 'Home',
@@ -28,7 +29,8 @@ export default {
       iconList: [],
       swiperList: [],
       recommendList: [],
-      weekendList: []
+      weekendList: [],
+      lastCity: ""
     }
   },
   components: {
@@ -38,9 +40,19 @@ export default {
     HomeRecommend,
     HomeWeekend
   },
+  computed:{
+    ...mapState(['city'])
+  },
+  activated(){
+    if(this.lastCity !== this.city){
+      this.lastCity = this.city;
+      this.getHomeInfo()
+    }
+  },
   mounted(){
     // 首页发一次请求
     this.getHomeInfo();
+    this.lastCity = this.city;
   },
   methods:{
     getHomeInfo(){
