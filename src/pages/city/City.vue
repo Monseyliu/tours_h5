@@ -3,7 +3,7 @@
         <!-- 头部 -->
         <CityHeader />
         <!-- 城市搜索 -->
-        <CitySearch />
+        <CitySearch :cities="cities" />
         <!-- 城市列表 -->
         <CityList :cities="cities" :hotCities="hotCities" :letter="letter" />
         <!-- a-z索引组件 -->

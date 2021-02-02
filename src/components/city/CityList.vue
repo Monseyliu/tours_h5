@@ -57,7 +57,7 @@ export default {
   },
   watch: {
     letter() {
-      //  监听letter变化，并进行滚动
+      //监听letter变化，并进行滚动
       if (this.letter) {
         const element = this.$refs[this.letter][0];
         this.scroll.scrollToElement(element);
