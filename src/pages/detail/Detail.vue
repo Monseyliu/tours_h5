@@ -2,12 +2,15 @@
     <div class="detail">
         <!-- Banner 图片 -->
         <Banner />
+        <!-- 头部组件 -->
+        <DetailHeader />
     </div>
 </template>
 
 <script>
 // 引入 banner  组件
 import Banner from "../../components/detail/Banner";
+import DetailHeader from "../../components/detail/DetailHeader"
 
 
 export default {
@@ -16,7 +19,8 @@ export default {
         return{}
     },
     components:{
-        Banner
+        Banner,
+        DetailHeader
     }
 }
 </script>
