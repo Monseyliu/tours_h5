@@ -24,3 +24,10 @@ $headHeight: .86rem;
     width: $width;
     height: $height;
 }
+// flex
+// 纵向排列居中
+@mixin fCoCent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
