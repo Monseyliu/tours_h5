@@ -18,45 +18,20 @@
       </div>
       <!-- 热门城市 -->
       <div class="area">
-        <div class="title border-topbottom">人城市</div>
-        <div class="button_list">
-          <div class="button_wrap">
-            <div class="button">北京</div>
-          </div>
-          <div class="button_wrap">
-            <div class="button">北京</div>
-          </div>
-          <div class="button_wrap">
-            <div class="button">北京</div>
+        <div class="title border-topbottom">热门城市</div>
+        <div class="button_list" >
+          <div class="button_wrap" v-for="hot of hotCities" :key="hot.id">
+            <div class="button">{{hot.name}}</div>
           </div>
         </div>
       </div>
       <!-- 城市排序 -->
-      <div class="area">
-        <div class="title border-topbottom">A</div>
+      <div class="area" v-for="(item,key) of cities" :key="key">
+        <div class="title border-topbottom">{{key}}</div>
         <div class="item_list">
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item_list">
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item_list">
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
-          <div class="item border-topbottom">阿拉尔</div>
+          <div class="item border-topbottom"
+          v-for="city of item" :key="city.id"
+          >{{city.name}}</div>
         </div>
       </div>
     </div>
@@ -71,6 +46,10 @@ export default {
   name: "CityList",
   data() {
     return {};
+  },
+  props:{
+      cities: Object,
+      hotCities: Array
   },
   mounted(){
       this.scroll = new Bscroll(this.$refs.wrapper)
