@@ -19,3 +19,8 @@ $headHeight: .86rem;
     outline: none;
     border: none;
 }
+// 宽高
+@mixin wh($width,$height){
+    width: $width;
+    height: $height;
+}
