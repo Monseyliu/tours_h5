@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- 头部组件 -->
-    <Header :isLeft="true" title="输入城市/景点/游玩主题" :city="city" Patch="/city" />
+    <Header :isLeft="true" title="输入城市/景点/游玩主题"  Patch="/city" />
     <!-- 轮播图 -->
     <Swiper :swiperList="swiperList" />
     <!-- icons 区域 -->
@@ -25,7 +25,6 @@ export default {
   name: 'Home',
   data(){
     return{
-      city: "北京",
       iconList: [],
       swiperList: [],
       recommendList: [],

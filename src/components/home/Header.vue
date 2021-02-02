@@ -9,24 +9,32 @@
       {{ title }}
     </div>
     <router-link :to="Patch" class="header_right_wrap">
-    <div class="header_right">{{city}}<span class="iconfont down_icon">&#xe688;</span></div>
+      <div class="header_right">
+        <span class="header_right_title">{{ city }}</span>
+        <span class="iconfont down_icon">&#xe688;</span>
+      </div>
     </router-link>
   </div>
 </template>
 <script>
+import {mapState, mapGetters} from 'vuex';
+
 export default {
   name: "HomeHeader",
   props: {
     title: String,
     isLeft: Boolean,
-    city: String,
-    Patch: String
+    Patch: String,
   },
+  computed:{
+    ...mapState(['city']),
+    ...mapGetters(['doubleCity'])
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/mixin.scss';
+@import "~@/assets/style/mixin.scss";
 
 .Header {
   display: flex;
@@ -52,16 +60,17 @@ export default {
     text-align: start;
     text-indent: 0.1rem;
   }
-  .header_right_wrap{
+  .header_right_wrap {
     color: #fff;
   }
   .header_right {
-    width: 1.24rem;
+    min-width: 1.04rem;
     float: right;
     text-align: center;
-    .down_icon{
-        font-size: 0.24rem;
-        margin-left: 0.1rem;
+    margin-left: 0.05rem;
+    .down_icon {
+      font-size: 0.24rem;
+      margin-left: 0.1rem;
     }
   }
 }

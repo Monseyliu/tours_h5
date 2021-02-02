@@ -4,20 +4,27 @@
       <input type="text" placeholder="输入城市名" v-model="keyword" />
     </div>
     <!-- 内容 -->
-    <div class="search_content" ref="search_content" v-if="keyword">
-      <ul>
-        <li class="search_item border-bottom" v-for="item of list" :key="item.id"
-        >
-          {{ item.name }}
-        </li>
-        <li class="search_item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
-      </ul>
+      <div class="search_content" ref="search_content" v-if="keyword">
+        <ul>
+          <li
+            class="search_item border-bottom"
+            v-for="item of list"
+            :key="item.id"
+            @click="handleCityClick(item.name)"
+          >
+            {{ item.name }}
+          </li>
+          <li class="search_item border-bottom" v-show="hasNoData">
+            没有找到匹配数据
+          </li>
+        </ul>
     </div>
   </div>
 </template>
 
 <script>
 import Bscroll from "better-scroll";
+import {mapMutations} from 'vuex';
 
 export default {
   name: "CitySearch",
@@ -31,17 +38,25 @@ export default {
   props: {
     cities: Object,
   },
-  mounted(){
-      this.scroll = new Bscroll(this.$refs.search_content);
+  methods:{
+      ...mapMutations(['changeCity']),
+      handleCityClick(name){
+      // 点击热门城市跳转
+      this.changeCity(name)
+      this.$router.push('/')
+    }
+  },
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.search_content);
   },
   watch: {
     keyword() {
       if (this.timer) {
         clearTimeout(this.timer);
-      };
-      if(!this.keyword){
-          this.list = []
-          return
+      }
+      if (!this.keyword) {
+        this.list = [];
+        return;
       }
       this.timer = setTimeout(() => {
         const result = [];
@@ -59,11 +74,11 @@ export default {
       }, 100);
     },
   },
-  computed:{
-      hasNoData(){
-          return this.list;
-      }
-  }
+  computed: {
+    hasNoData() {
+      return this.list;
+    },
+  },
 };
 </script>
 
@@ -92,11 +107,11 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    .search_item{
-        line-height: .62rem;
-        padding-left: .2rem;
-        color: #666;
-        background-color: #fff;
+    .search_item {
+      line-height: 0.62rem;
+      padding-left: 0.2rem;
+      color: #666;
+      background-color: #fff;
     }
   }
 }
