@@ -4,6 +4,8 @@ $darkColor: #333;
 $lightDark: #f1f1f1;
 $yellowColor: #ff9300;
 
+// 标准头部高度
+$headHeight: .86rem;
 
 // 文字不换号省略号
 @mixin ellipsis {

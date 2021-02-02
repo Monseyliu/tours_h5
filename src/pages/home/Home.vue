@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- 头部组件 -->
-    <Header :isLeft="true" title="输入城市/景点/游玩主题" :city="city" />
+    <Header :isLeft="true" title="输入城市/景点/游玩主题" :city="city" Patch="/city" />
     <!-- 轮播图 -->
     <Swiper :swiperList="swiperList" />
     <!-- icons 区域 -->

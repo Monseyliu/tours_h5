@@ -8,7 +8,9 @@
       <span class="iconfont">&#xe67d;</span>
       {{ title }}
     </div>
+    <router-link :to="Patch" class="header_right_wrap">
     <div class="header_right">{{city}}<span class="iconfont down_icon">&#xe688;</span></div>
+    </router-link>
   </div>
 </template>
 <script>
@@ -17,7 +19,8 @@ export default {
   props: {
     title: String,
     isLeft: Boolean,
-    city: String
+    city: String,
+    Patch: String
   },
 };
 </script>
@@ -27,7 +30,7 @@ export default {
 
 .Header {
   display: flex;
-  line-height: 0.86rem;
+  line-height: $headHeight;
   background-color: $bgColor;
   color: #fff;
   .header_left {
@@ -48,6 +51,9 @@ export default {
     color: #ccc;
     text-align: start;
     text-indent: 0.1rem;
+  }
+  .header_right_wrap{
+    color: #fff;
   }
   .header_right {
     width: 1.24rem;
