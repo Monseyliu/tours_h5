@@ -5,9 +5,9 @@
         <!-- 城市搜索 -->
         <CitySearch />
         <!-- 城市列表 -->
-        <CityList :cities="cities" :hotCities="hotCities" />
+        <CityList :cities="cities" :hotCities="hotCities" :letter="letter" />
         <!-- a-z索引组件 -->
-        <Alphabet :cities="cities" />
+        <Alphabet :cities="cities" @change="handleLetterChange" />
     </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
         return{
             cities: null, //
             hotCities: [], //热门城市
+            letter: "", //Alphabet 点击事件传递的值
         }
     },
     mounted(){
@@ -40,6 +41,10 @@ export default {
                     this.hotCities = data.hotCities;
                 }
             }).catch(err => err)
+        },
+        handleLetterChange(letter){
+            // 监听 alphabet 组件 点击字母事件
+            this.letter = letter;
         }
     },
     components:{

@@ -8,30 +8,28 @@
           <div class="button_wrap">
             <div class="button">北京</div>
           </div>
-          <div class="button_wrap">
-            <div class="button">北京</div>
-          </div>
-          <div class="button_wrap">
-            <div class="button">北京</div>
-          </div>
         </div>
       </div>
       <!-- 热门城市 -->
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
-        <div class="button_list" >
+        <div class="button_list">
           <div class="button_wrap" v-for="hot of hotCities" :key="hot.id">
-            <div class="button">{{hot.name}}</div>
+            <div class="button">{{ hot.name }}</div>
           </div>
         </div>
       </div>
       <!-- 城市排序 -->
-      <div class="area" v-for="(item,key) of cities" :key="key">
-        <div class="title border-topbottom">{{key}}</div>
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
+        <div class="title border-topbottom">{{ key }}</div>
         <div class="item_list">
-          <div class="item border-topbottom"
-          v-for="city of item" :key="city.id"
-          >{{city.name}}</div>
+          <div
+            class="item border-topbottom"
+            v-for="city of item"
+            :key="city.id"
+          >
+            {{ city.name }}
+          </div>
         </div>
       </div>
     </div>
@@ -39,7 +37,7 @@
 </template>
 
 <script>
-//  引入 better-scroll 
+//  引入 better-scroll
 import Bscroll from "better-scroll";
 
 export default {
@@ -47,13 +45,25 @@ export default {
   data() {
     return {};
   },
-  props:{
-      cities: Object,
-      hotCities: Array
+  props: {
+    cities: Object,
+    hotCities: Array,
+    letter: String,
   },
-  mounted(){
-      this.scroll = new Bscroll(this.$refs.wrapper)
-  }
+  mounted() {
+    this.scroll = new Bscroll(this.$refs.wrapper, {
+      click: true,
+    });
+  },
+  watch: {
+    letter() {
+      //  监听letter变化，并进行滚动
+      if (this.letter) {
+        const element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element);
+      }
+    },
+  },
 };
 </script>
 
