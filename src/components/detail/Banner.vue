@@ -4,18 +4,18 @@
     <div class="banner" @click="handleBannerClick">
       <img
         class="banner_img"
-        src="http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg"
+        :src="bannerImg"
         alt=""
       />
       <div class="banner_info">
-        <div class="banner_title">大连圣亚海洋世界</div>
+        <div class="banner_title">{{sightName}}</div>
         <div class="banner_number">
           <span class="iconfont banner_icon">&#xe6c9;21</span>
         </div>
       </div>
     </div>
     <!-- 公用画廊组件 -->
-    <CommonGallary :imgs="imgs" v-show="showGallary" @close="CloseGallary" />
+    <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @close="CloseGallary" />
   </div>
 </template>
 
@@ -27,9 +27,13 @@ export default {
   name: "Banner",
   data() {
     return {
-        imgs: ['http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg','http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg','http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg'], //画廊组件使用图片
         showGallary: false, //控制 画廊展示隐藏
     };
+  },
+  props:{
+      sightName: String,
+      bannerImg: String,
+      gallaryImgs: Array
   },
   methods:{
       handleBannerClick(){

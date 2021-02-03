@@ -3,7 +3,7 @@
     <!-- 全局共用组件画廊 -->
     <div class="wraper">
       <mt-swipe :auto="0" class="mt_swipe">
-        <mt-swipe-item v-for="(item,index) of imgs" :key="index">
+        <mt-swipe-item v-for="(item,index) of gallaryImgs" :key="index">
           <img class="swipe_img" :src="item" />
         </mt-swipe-item>
       </mt-swipe>
@@ -18,7 +18,7 @@ export default {
     return {};
   },
   props:{
-      imgs: Array
+      gallaryImgs: Array
   },
   methods: {
       closeGalary(){

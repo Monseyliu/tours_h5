@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~@/assets/style/mixin.scss';
+@import "~@/assets/style/mixin.scss";
 
 .header-abs {
   position: absolute;
@@ -61,7 +61,7 @@ export default {
   border-radius: 0.4rem;
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
-    color: #fff;
+  color: #fff;
   .header-abs-back {
     color: #fff;
     font-size: 0.4rem;
